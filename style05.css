@@ -1,0 +1,28 @@
+ p { text-align: justifiy; 
+       font-family: perpetua;
+      }
+    h1 { background-color: #88ff88; }
+    h3 { background-color: #ffddcc; }
+
+    #Hanover {
+      border: red dashed;
+      padding: 5px; 
+      margin: 10px; 
+      height: 230px;
+      width: 200px; 
+      background-color: #f9elb5;
+      color: #3322dd;
+      float: right;
+    }
+    #Hanover-imag {
+      width: 90%;
+      height: 90%;
+    }
+    th,td {
+        background-color: #ddd3dd;
+        padding: 3px;
+    }
+    .data {
+      color: #666666;
+      font-family: Courier;
+    }
