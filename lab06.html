@@ -41,19 +41,19 @@
  
      <h1>About Me</h1>
      <a href=https://www.youtube.com/watch?v=dQw4w9WgXcQ"><image src="Tim_Taylor.jpg"></a>
-     <h3>What I do</h3>
+     <div><h3>What I do</h3></div>
+        <button id="job">
+            Click here to find out!
+        </button>
+          <p class="data" hidden id="job">
+              
+  I am a web mapping student.
+     </p>
+  
      <div id="Hanover">
         <img src="Hanover.jpg" src="Hanover.jpg">
         <br>
         This is Baker Library.
-  
-   <button id="job">
-    Click here to find out!
-</button>
-  <p class="data" hidden id="job">
-      
-  I am a web mapping student.
-     </p>
 
   <script>
       //$("p") <-- this will reference all of the <p> tags
@@ -63,15 +63,21 @@
       // use jQuery to listen for a button click
       // toggle the hidden job message
 
-      $("button#job").hover(
+      $("button#job").click(
             function() {
-              $("p#idjob").toggle();
+              $("p#job").toggle();
           }
       );
     $("h3").hover(
         function() {
           console.log("h3 hover;")'
         });
+
+     $("button#home").click(
+            function() {
+              $("p#home").toggle();
+          }
+      );
   </script>
 
      <h3 style="font-family: perpetua, Georgia; background-color: #ffddcc">Where I live</h3>
