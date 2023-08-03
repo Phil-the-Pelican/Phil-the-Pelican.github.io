@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+s<!DOCTYPE html>
 <html>
 <head>
       <title>Hangman</title> <!-- the title of our web page -->
@@ -11,9 +11,9 @@
 function() {
 
   
-    var total_guess = 10;
-    var word - "f i s h";
-    var blanks = " _ _ _ _";
+    var total_guesses = 10;
+    var word = "f i s h";
+    var blanks = "_ _ _ _";
     var guesses = "";
 
   $("#word").html(blanks);
@@ -29,7 +29,7 @@ $(".letter").click(
       guesses = guess + id;
         $("#" + id).css('text-decoration', 'line-through');
 
-              total_guesses = total_guess -1;
+              total_guesses = total_guesses -1;
               if (total_guesses < 0) {
                 $("#error_msg").html("You are out of guesses. YOU LOSE!")
               } else {
@@ -67,7 +67,7 @@ $(".letter").click(
 
   <div id="chances">
   <p>
-      You have <span id="numleft">10</span> 10 chances left.
+      You have <span id="numleft">10</span> chances left.
   </p>
   </div>
 
@@ -111,7 +111,7 @@ $(".letter").click(
     
   </div>
 
-  <div id="error_mes" style="color: red;"></div
+  <div id="error_msg" style="color: red;"></div
 
                                             
 </body>
