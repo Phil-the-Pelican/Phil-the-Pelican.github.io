@@ -1,8 +1,8 @@
-s<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
       <title>Hangman</title> <!-- the title of our web page -->
-      <script src=https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.jas></script>   
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>   
 <script>
 
 
@@ -33,7 +33,7 @@ $(".letter").click(
               if (total_guesses < 0) {
                 $("#error_msg").html("You are out of guesses. YOU LOSE!")
               } else {
-                $(#numleft).html(total_guesses);
+                $("#numleft").html(total_guesses);
 
                 if (word.includes(id)) {
                   var index = word.indexOf(id);
