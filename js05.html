@@ -1,4 +1,4 @@
-<! DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Hello Campus!</title>
@@ -13,7 +13,7 @@
     <style>
       #map { height: 400px; width: 500px; }
       html, body {height: 100%; margin: 0; padding: 0; }
-      #buttons { padding: 10px: background: #f3d1c9: }
+      #buttons { padding: 10px; background: #f3d1c9; }
     </style>
     <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
 
@@ -25,19 +25,19 @@ $(document).ready(function(){
       var snakesLayer;
       var snakesVisible = false;
   
-      var OpenStreetMap_HOT = L.tileLayer ('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
-                                           { maxZoom: 19,
-                                               attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Tiles courtesy of <a href=http://hot.osm.org">HOT OSM</a>' 
+      var OpenStreetMap_HOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+                                           maxZoom: 19,
+                                           attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Tiles courtesy of <a href="http://hot.osm.org">HOT OSM</a>' 
       }); 
       var stamenLayer = new L.StamenTileLayer("toner");
 
-      Function lineSymbology(feature) {
+      function lineSymbology(feature) {
         var slope = feature.properties.Max_Slope;
         var lineWidth = 2;
         var lineColor = "#a1d76a";
 
-        if (slope > 15.0) { lineColor = "#777777": lineWidth = 4; }
-        if (slope > 30.0) {lineColor = "#e9a3c9"; lineWidth = 6; }
+        if (slope > 15.0) { lineColor = "#777777"; lineWidth = 4; }
+        if (slope > 30.0) { lineColor = "#e9a3c9"; lineWidth = 6; }
 
         return {
           color: lineColor,
@@ -46,56 +46,51 @@ $(document).ready(function(){
         };   
       }
       
-$(document).ready(function(){       
-         var map = L.map('map', {
-           center: [ 43.7034, -72.2887 ],
-           zoom: 15,
-           layers: [OpenStreetMap_HOT]
-         });
+      var map = L.map('map', {
+        center: [ 43.7034, -72.2887 ],
+        zoom: 15,
+        layers: [OpenStreetMap_HOT]
+      });
 
-          var baseMaps = {"OSM" : OpenStreetMaps_HOT,
-                          "Stamen" :stamenLayer
+      var baseMaps = {
+        "OSM" : OpenStreetMap_HOT,
+        "Stamen" : stamenLayer
+      };
 
-          };
+      var control = L.control.layers(baseMaps).addTo(map);
 
-          var control = L.control.layers(baseMaps).addTo(map);
+      snakesLayer = L.geoJson(snakes_geojson, {
+        onEachFeature: function(feature, layer) {
+          layer.bindPopup("<b>Name: " + feature.properties.NAME + "</b>");
+        }
+      }).addTo(map);
 
-          
+      L.geoJson(access_geojson, {
+        style: lineSymbology,
+        onEachFeature: function(feature, layer) {
+          layer.bindPopup("<b>Name: " + feature.properties.NAME + "</b><br>" + 
+                          "Min. Slope: " + feature.properties.Min_Slope + "<br>" +
+                          "Max. Slope: " + feature.properties.Max_Slope);
+        }
+      }).addTo(map);
 
-        snakeslayer = L.geoJson(snakes_geojson,
-                { onEachFeature: function(feature, layer) {
-                  layer.bindPopup("<b>Name: " + 
-                  feature.properties.NAME + "</b>");
-                }
-                  }).addTo(map);
-
-        L.geoJson(access_geojson,
-                  { style: lineSymbology,
-                   { onEachFeature: function(feature, layer) {
-                  layer.bindPopup("<b>Name: " + 
-                  feature.properties.NAME + "</b><br>" + 
-                  "Min. Slope: " +
-                  feature.properties.Min_Slope + "<br>" +
-                  "Max. Slope: " +
-                  feature.peroperties.Max_Slope);
-                }
-                  });
-          $("#toggleSnakes").click( function() {
-              if (snakesVisible) {
-                snakesVisible = false;
-                snakesLayer.removeFrom(map);
-              } else }
-                snakesVisible - true;
-                snakesLayers.addTo(map);
-              }
-            
-})
+      $("#toggleSnakes").click(function() {
+        if (snakesVisible) {
+          snakesVisible = false;
+          snakesLayer.removeFrom(map);
+        } else {
+          snakesVisible = true;
+          snakesLayer.addTo(map);
+        }
+      });
+});
     </script>
   </head>
   <body>
     <h1>Hello Campus!</h1>
     <div id="map"></div>
     <div id="buttons">
-          <button id="toggleSnakes"> Toggle the Snakes Layer.</button>
+      <button id="toggleSnakes">Toggle the Snakes Layer</button>
+    </div>
   </body>
 </html>
