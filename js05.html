@@ -59,7 +59,7 @@ $(document).ready(function(){
 
 	L.control.layers(baseMaps).addTo(map);
 
-      snakesLayer = L.geoJson(snakesLayer_geojson,
+      snakesLayer = L.geoJson(snakes_geojson,
                 { onEachFeature: function(feature, layer) {
                   layer.bindPopup("<b>Name: " + 
                   feature.properties.NAME + "</b><br>" +
