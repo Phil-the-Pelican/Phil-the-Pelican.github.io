@@ -26,7 +26,14 @@
                     layers: [OpenStreetMap_HOT]
                         })
 
-                        L.geoJson(snakes.geojson).addTo(map);
+                        L.geoJson(snakes.geojson,
+                                  { color: "blue",
+                                    weight: 5,
+                                    opacity: .5,
+                                    onEachFeature: function (feature, layer) {
+                                        layer.bindPopup("<b>Trail Name: " + feature.properties.NAME + "</b>")
+                                    }
+                                  }).addTo(map);
                         
                 }
         </script>
