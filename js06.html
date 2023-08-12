@@ -59,7 +59,8 @@ $(document).ready(function(){
   var response = $.ajax({
       url: "snakes2.geojson",
       dataType: "json",
-      success: console.log("snakes data loaded!")<
+      success: function () {
+	console.log ("snakes data loaded!");
       error: function(xhr) {
         alert(xhr.statusText);
       }
@@ -85,7 +86,7 @@ $(document).ready(function(){
                   "Section Length: " + feature.properties.SECT_LENGTH);
                 }
                   });
-          $("#toggleAccess".show();)
+          $("#toggleAccess").show();
           $("#toggleAccess").click( function() {
             if (accessVisible) {
             accessVisible = false;
