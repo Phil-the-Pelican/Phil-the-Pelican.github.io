@@ -14,12 +14,9 @@
       html, body {height: 100%; margin: 0; padding: 0; }
       #buttons { padding: 10px; background: #f3d1c9; }
     </style>
-
-    <script src="access.geojson"></script>
     
     <script>
 $(document).ready(function(){
-      var accessLayer;
       var accessVisible = true;
   
       var OpenStreetMap_HOT = L.tileLayer ('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
@@ -56,48 +53,37 @@ $(document).ready(function(){
 
 	L.control.layers(baseMaps).addTo(map);
 
-  var response = $.ajax({
-      url: "snakes2.geojson",
-      dataType: "json",
-      success: function () {
-	console.log ("snakes data loaded!");
-      error: function(xhr) {
-        alert(xhr.statusText);
-      }
-  });
+var response = $.ajax({
+    url: "access2.geojson",
+    dataType: "json",
+    success: console.log("access data loaded!"),
+    error: function(xhr) {
+	    alert(xhr.StatusText);
+    }
+});
 
-  $.when(response).done(function() {
-     
-  
-          var snakesLayer = L.geoJson(response.responseJSON,
-                    { style: lineSymbology,
-                        { onEachFeature: function(feature, layer) {
-                        layer.bindPopup("<b>Name: " + 
-                        feature.properties.NAME + "</b><br>" +
-                        "Town: " + feature.properties.TOWN);
-                    }
-                  }).addTo(map);
-
-  accessLayer = L.geoJson(access_geojson,
+$.when(response).done(function() {	
+	
+ 	var accessLayer = L.geoJson(response.responseJSON,
                    { style: lineSymbology,
                      onEachFeature: function(feature, layer) {
-                  layer.bindPopup("<b>Name: " + 
-                  feature.properties.NAME + "</b><br>" +
-                  "Section Length: " + feature.properties.SECT_LENGTH);
-                }
-                  });
-          $("#toggleAccess").show();
-          $("#toggleAccess").click( function() {
-            if (accessVisible) {
-            accessVisible = false;
-            accessLayer.removeFrom(map);
-          } else {
-              accessVisible = true;
-              accessLayer.addTo(map);
-          }
-        })
-      }); 
-    })
+                	  layer.bindPopup("<b>Name: " + 
+               	   	feature.properties.NAME + "</b><br>" +
+               	   	"Section Length: " + feature.properties.SECT_LENGTH);
+               	 }
+                	  }).addTo(map);
+	 $("#toggleAccess").show();
+ 	 $("#toggleAccess").click( function() {
+   	 if (accessVisible) {
+    	  accessVisible = false;
+     	 accessLayer.removeFrom(map);
+  	  } else {
+   		 accessVisible = true;
+ 	   accessLayer.addTo(map);
+   	  }
+ 	})
+       })
+     });
     </script>
   </head>
   <body>
