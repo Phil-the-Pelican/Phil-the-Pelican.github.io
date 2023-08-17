@@ -27,24 +27,21 @@
             align-items: center;
             max-width: 800px;
             margin: 0 auto;
-            flex-direction: column;
         }
         .media-container {
             display: flex;
             justify-content: space-between;
             width: 100%;
-            align-items: flex-start;
         }
-        .media {
+        .image {
             width: 50%;
             height: auto;
             margin: 10px;
-            display: block;
         }
-        .caption {
-            font-size: 14px;
-            margin-top: 5px;
-            text-align: center;
+        .video {
+            width: 50%;
+            height: auto;
+            margin: 10px;
         }
         p {
             text-align: justify;
@@ -59,14 +56,8 @@
     <div id="container">
         <div class="content">
             <div class="media-container">
-                <div class="image-container">
-                    <img class="media" src="4860018.jpg" alt="4860018">
-                    <div class="caption">An adult Pharaoh cicada, which emerge once every 17 years</div>
-                </div>
-                <div class="video-container">
-                    <iframe class="media" width="560" height="315" src="https://www.youtube.com/embed/keJp-On1dBc" frameborder="0" allowfullscreen></iframe>
-                    <div class="caption">IT'S ALIVE!!!</div>
-                </div>
+                <img class="image" src="4860018.jpg" alt="4860018">
+                <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/keJp-On1dBc" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </div>
