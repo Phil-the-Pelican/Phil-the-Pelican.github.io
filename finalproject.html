@@ -7,36 +7,37 @@
             margin: 0;
             padding: 0;
         }
-        #container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            text-align: center;
-            padding: 10px;
-        }
         #header {
             background-color: #88ccff;
-            padding: 10px;
+            text-align: center;
+            padding: 20px 0;
         }
         h1 {
             margin: 0;
-            font-size: 24px;
+            font-size: 36px;
+        }
+        #container {
+            background-color: #88ccff;
+            text-align: center;
+            padding: 20px 0;
         }
         .content {
             display: flex;
+            justify-content: center;
             align-items: center;
-            justify-content: space-between;
+            flex-direction: column;
             max-width: 800px;
             margin: 0 auto;
         }
         .image {
-            max-width: 400px;
-            max-height: 400px;
-            margin-right: 20px;
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
         }
         .video {
-            max-width: 400px;
-            max-height: 400px;
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
         }
         p {
             text-align: justify;
@@ -45,14 +46,14 @@
     </style>
 </head>
 <body onload="initialize()">
-    <div id="container">
-        <div id="header">
-            <h1>The Bug That Bugs Me: Cicadas</h1>
-        </div>
+    <div id="header">
+        <h1>The Bug That Bugs Me: Cicadas</h1>
     </div>
-    <div class="content">
-        <img class="image" src="4860018.jpg" alt="4860018">
-        <iframe class="video" width="400" height="400" src="https://www.youtube.com/embed/keJp-On1dBc" frameborder="0" allowfullscreen></iframe>
+    <div id="container">
+        <div class="content">
+            <img class="image" src="4860018.jpg" alt="4860018">
+            <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/keJp-On1dBc" frameborder="0" allowfullscreen></iframe>
+        </div>
     </div>
 </body>
 </html>
