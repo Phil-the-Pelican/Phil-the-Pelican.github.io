@@ -25,19 +25,23 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
             max-width: 800px;
             margin: 0 auto;
         }
+        .media-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
         .image {
-            max-width: 100%;
+            width: 50%;
             height: auto;
-            margin: 10px 0;
+            margin: 10px;
         }
         .video {
-            max-width: 100%;
+            width: 50%;
             height: auto;
-            margin: 10px 0;
+            margin: 10px;
         }
         p {
             text-align: justify;
@@ -51,8 +55,10 @@
     </div>
     <div id="container">
         <div class="content">
-            <img class="image" src="4860018.jpg" alt="4860018">
-            <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/keJp-On1dBc" frameborder="0" allowfullscreen></iframe>
+            <div class="media-container">
+                <img class="image" src="4860018.jpg" alt="4860018">
+                <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/keJp-On1dBc" frameborder="0" allowfullscreen></iframe>
+            </div>
         </div>
     </div>
 </body>
