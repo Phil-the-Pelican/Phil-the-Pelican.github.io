@@ -3,68 +3,16 @@
 <head>
     <title>The Bug That Bugs Me: Cicadas</title>  
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-        #header {
-            background-color: #88ccff;
-            text-align: center;
-            padding: 20px 0;
-        }
-        h1 {
-            margin: 0;
-            font-size: 36px;
-        }
-        #container {
-            background-color: #88ccff;
-            text-align: center;
-            padding: 20px 0;
-        }
-        .content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .media-container {
+        /* Your existing CSS styles here */
+        .equal-size-container {
             display: flex;
             justify-content: space-between;
-            width: 100%;
-            align-items: flex-start;
+            align-items: center;
         }
-        .image {
+        .equal-size-item {
             width: 50%;
-            height: auto;
-            margin: 10px;
-        }
-        .video {
-            width: 50%;
-            height: auto;
-            margin: 10px;
-        }
-        #paragraph-container {
-            background-color: #ff8c00; /* Sunrise orange */
-            padding: 20px;
-            margin: 20px;
-        }
-        .silver-box {
-            border: 1px solid silver;
+            box-sizing: border-box;
             padding: 10px;
-        }
-        p {
-            text-align: justify;
-            font-family: "Perpetua", serif;
-            margin: 0;
-        }
-        .paragraph-spacing {
-            margin-bottom: 20px; /* Adjust the spacing as needed */
-        }
-        .light-purple-background {
-            background-color: #d5c7e8; /* Light purple color */
-            padding: 20px;
-            margin: 20px;
         }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
@@ -80,36 +28,20 @@
         <h1>The Bug That Bugs Me: Cicadas</h1>
     </div>
     <div id="container">
-        <div class="content">
-            <div class="media-container">
+        <div class="content equal-size-container">
+            <div class="equal-size-item">
                 <img class="image" src="4860018.jpg" alt="4860018">
+            </div>
+            <div class="equal-size-item">
                 <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/keJp-On1dBc" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </div>
     <div id="paragraph-container">
-        <div class="silver-box">
-            <p class="paragraph-spacing"><strong><u> Introduction </u></strong></p>
-            <p> The cicadas is a fascinating insect and is a part of the Hemiptera order of insects, a relative of both bed bugs and stink bugs. Cicadas emerge from their underground dens, called nymphs, during one of two cycles: annual (once a year) or periodical (once every several years). Annual cicadas thrive throughout the continent, residing in forests, grasslands, and urban areas. Their life span lasts one to two years, with adults emerging each summer. Periodical cicadas, however, appear above ground once every 13 or 17 years. They inhabit Eastern North America and emerge en masse. </p>
-    
-            <p> As someone from the mid-Atlantic reigon of the East Coast, I grew up hearing stories about cicadas. In my home town, periodical broods emerge once every 17 years. I witnessed the event firsthand during the summer of 2021, when you couldn't walk past a tree without hearing cicadas buzz. My knowledge of cicadas has largely been limited to personal experience. This website hopefully will provide some insight on where to find American cicadas. </p>
-        </div>
+        <!-- Your paragraph content here -->
     </div>
     <div class="light-purple-background">
-        <div class="silver-box">
-            <p class="paragraph-spacing"><strong><u> About This Map </u></strong></p>
-            <p> There are two layers present in this map, each of which depicts Brood X, one of the largest and most geographically diverse groups of 17-year periodical cicadas in the United States. </p>
-            
-            <p> 1. The first layer depicts Brood X as observed in the years leading up to and during its 2004 emergence (2000-2004), based on photographic data collected during that time. Unforutnately, there is significantly less data from the time period as compared to later brood emergences. </p>
-
-            <p> 2. The second layer is based on photographic evidence from the most recent emergence of Brood X in 2021. There is far more evidence in this more recent example, likely due to the availability of crowdsourced information in the cellphone era.  </p>
-
-            <p> This map shows clear geographic patterns of Brood X in the United States, a cicada cohort which is most common in the mid-Atlantic reigon, as well as parts of the mid-West and the South.  </p>
-        </div>
+        <!-- Your map content here -->
     </div>
-    <div id="map"></div>
-    <script>
-        /* Your map-related script here */
-    </script>
 </body>
 </html>
