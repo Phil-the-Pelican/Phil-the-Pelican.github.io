@@ -3,18 +3,63 @@
 <head>
     <title>The Bug That Bugs Me: Cicadas</title>  
     <style>
-        /* Your existing CSS styles here */
-    </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-   integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-   crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-   integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-   crossorigin=""></script>
-    <style>
-      #map { height: 400px; width: 700px; }
-      html, body {height: 100%; margin: 0; padding: 0; }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #header {
+            background-color: #88ccff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        #container {
+            background-color: #88ccff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .media-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .image {
+            width: 50%;
+            height: auto;
+            margin: 10px;
+        }
+        .video {
+            width: 50%;
+            height: auto;
+            margin: 10px;
+        }
+        #paragraph-container {
+            background-color: #ff8c00; /* Sunrise orange */
+            padding: 20px;
+            margin: 20px;
+        }
+        .silver-box {
+            border: 1px solid silver;
+            padding: 10px;
+        }
+        p {
+            text-align: justify;
+            font-family: "Perpetua", serif;
+            margin: 0;
+        }
+        .paragraph-spacing {
+            margin-bottom: 20px; /* Adjust the spacing as needed */
+        }
     </style>
 </head>
 <body onload="initialize()">
@@ -32,32 +77,10 @@
     <div id="paragraph-container">
         <div class="silver-box">
             <p class="paragraph-spacing"><strong><u> Introduction </u></strong></p>
-            <p> The cicadas is a fascinating insect and is a part of the Hemiptera order of insects, a relative of both bed bugs and stink bugs. Cicadas emerge from their underground dens, called nymphs, during one of two cycles: annual (once a year) or periodical (once every several years). </p>
-
-            <!-- Your paragraphs here -->
-
+            <p> The cicadas is a fascinating insect and is a part of the Hemiptera order of insects, a relative of both bed bugs and stink bugs. Cicadas emerge from their underground dens, called nymphs, during one of two cycles: annual (once a year) or periodical (once every several years). Annual cicadas thrive throughout the continent, residing in forests, grasslands, and urban areas. Their life span lasts one to two years, with adults emerging each summer. Periodical cicadas, however, appear above ground once every 13 or 17 years. They inhabit Eastern North America and emerge en masse. </p>
+    
+            <p> As someone from the mid-Atlantic reigon of the East Coast, I grew up hearing stories about cicadas. In my home town, periodical broods emerge once every 17 years. I witnessed the event firsthand during the summer of 2021, when you couldn't walk past a tree without hearing ciadas buzz. My knowledge of cicadas has largely been limited to personal experience. This website hopefully will provide some insight on where to find American cicadas. </p>
         </div>
     </div>
-    <div id="map"></div>
-    <script>
-        $(document).ready(function(){
-            var OpenStreetMap_HOT = L.tileLayer ('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Tiles courtesy of <a href=http://hot.osm.org">HOT OSM</a>'
-            });
-
-            var map = L.map('map', {
-                center: [43.7034, -72.2887],
-                zoom: 15,
-                layers: [OpenStreetMap_HOT]
-            });
-
-            L.geoJson(observations-351385.geojson, {
-                onEachFeature: function(feature, layer) {
-                    layer.bindPopup("<b>Name: " + feature.properties.NAME + "</b>");
-                }
-            }).addTo(map);
-        });
-    </script>
 </body>
 </html>
