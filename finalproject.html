@@ -79,7 +79,7 @@
       #buttons { padding: 10px; background: #f3d1c9; }
     </style>
 </head>
-<body onload="initialize()">
+<body>
     <div id="header">
         <h1>The Bug That Bugs Me: Cicadas</h1>
     </div>
@@ -143,7 +143,7 @@ $(document).ready(function(){
 
 	L.control.layers(baseMaps).addTo(map);
 
-      observations2021Layer = L.geoJson(observations2021_geojson,
+      observations2021Layer = L.geoJson("observations2021.geojson",
                 { onEachFeature: function(feature, layer) {
                   layer.bindPopup("<b>scientific_Name: " + 
                   feature.properties.SCIENTIFIC_NAME + "</b><br>" +
