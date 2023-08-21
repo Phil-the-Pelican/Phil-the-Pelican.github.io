@@ -169,7 +169,7 @@ $(document).ready(function(){
       observations2004Layer.removeFrom(map);
     } else {
     observations2004Visible = true;
-    observations2004.addTo(map);
+   observations2004Layer.addTo(map);
     }
   })
 
@@ -179,7 +179,7 @@ $("#toggleobservations2021").click( function() {
       observations2021Layer.removeFrom(map);
     } else {
     observations2021Visible = true;
-    observations2021.addTo(map);
+    observations2021Layer.addTo(map);
     }
   })	
 })
