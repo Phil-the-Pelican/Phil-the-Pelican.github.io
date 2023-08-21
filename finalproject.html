@@ -138,14 +138,17 @@ $(document).ready(function(){
 
 
       observations2021Layer = L.geoJson(observations2021_geojson,
-                { onEachFeature: function(feature, layer) {
+                { pointToLayer: function(feature, latlng) {
+			return new L.CircleMarker(latlng, { radius: 10, fillOpacity: 0.85});
+		},
+			onEachFeature: function(feature, layer) {
 			var customIcon = L.icon({
               iconUrl: "marker-icon-red.png",  // Update with your icon URL  
               iconAnchor: [12, 41],  
               popupAnchor: [1, -34],  
               shadowSize: [41, 41]  
               });  
-              layer.setIcon(customIcon);
+              //layer.setIcon(customIcon);
                   layer.bindPopup("<b>scientific_Name: " + 
                   feature.properties.SCIENTIFIC_NAME + "</b><br>" +
                   "Town: " + feature.properties.TOWN);
