@@ -122,7 +122,7 @@ $(document).ready(function(){
 });
 	  
          var map = L.map('map', {
-           center: [ 43.7034, -72.2887 ],
+           center: [ 38.9072, -77.0369 ],
            zoom: 15
          });
 
@@ -172,6 +172,16 @@ $(document).ready(function(){
     observations2004.addTo(map);
     }
   })
+
+$("#toggleobservations2021").click( function() {
+    if (observations2021Visible) {
+      observations2021Visible = false;
+      observations2021Layer.removeFrom(map);
+    } else {
+    observations2021Visible = true;
+    observations2021.addTo(map);
+    }
+  })	
 })
 </script>
     
@@ -190,7 +200,11 @@ $(document).ready(function(){
     <div id="map">
     </div>
     <div id="buttons">
-      <button id="toggleobservations2004">Toggle the Emergence Layer.</button>
+      <button id="toggleobservations2004">Toggle the 2004 Emergence Layer.</button>
+    </div>
+
+    <div id="buttons">
+      <button id="toggleobservations2021">Toggle the 2021 Emergence Layer.</button>
     </div>
     <script>
         /* Your map-related script here */
