@@ -151,9 +151,8 @@ $(document).ready(function(){
               shadowSize: [41, 41]  
               });  
               //layer.setIcon(customIcon);
-                  layer.bindPopup("<b>scientific_Name: " + 
-                  feature.properties.SCIENTIFIC_NAME + "</b><br>" +
-                  "Town: " + feature.properties.TOWN);
+                  layer.bindPopup("<b>scientific_name: " + 
+                  feature.properties.scientific_name + "</b><br>" )
                 }
                   }).addTo(map);
 
