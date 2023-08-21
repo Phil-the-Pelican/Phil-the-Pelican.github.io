@@ -125,7 +125,8 @@ $(document).ready(function(){
 	  
          var map = L.map('map', {
            center: [ 38.9072, -77.0369 ],
-           zoom: 15
+           zoom: 10, 
+           layers: [OpenStreetMap_HOT]
          });
 
 	var baseMaps = { "OSM" : OpenStreetMap_HOT,
