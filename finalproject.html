@@ -80,6 +80,8 @@
       #map { height: 600px; width: 80%; display: block; margin-left: auto; margin-right: auto; }
       html, body {height: 100%; margin: 0; padding: 0; }
       #buttons { padding: 10px; background: #f3d1c9; }
+      #toggleobervations2021 { color: red }
+      #toggleobservations2004 { color: blue }
     </style>
 </head>
 <body>
@@ -139,7 +141,7 @@ $(document).ready(function(){
 
       observations2021Layer = L.geoJson(observations2021_geojson,
                 { pointToLayer: function(feature, latlng) {
-			return new L.CircleMarker(latlng, { radius: 10, fillOpacity: 0.85});
+			return new L.CircleMarker(latlng, { radius: 10, color: "red", fillOpacity: 0.85});
 		},
 			onEachFeature: function(feature, layer) {
 			var customIcon = L.icon({
