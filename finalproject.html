@@ -9,6 +9,8 @@
      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
    crossorigin=""></script>
+	<script src="observations2004.geojson"></script>	
+	<script src="observations2021.geojson"></script>
     <style>
         body {
             margin: 0;
@@ -143,7 +145,7 @@ $(document).ready(function(){
 
 	L.control.layers(baseMaps).addTo(map);
 
-      observations2021Layer = L.geoJson("observations2021.geojson",
+      observations2021Layer = L.geoJson(observations2021_geojson,
                 { onEachFeature: function(feature, layer) {
                   layer.bindPopup("<b>scientific_Name: " + 
                   feature.properties.SCIENTIFIC_NAME + "</b><br>" +
