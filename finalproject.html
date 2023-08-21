@@ -137,7 +137,7 @@ $(document).ready(function(){
       observations2021Layer = L.geoJson(observations2021_geojson,
                 { onEachFeature: function(feature, layer) {
 			var customIcon = L.icon({
-              iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png",  // Update with your icon URL  
+              iconUrl: "marker-icon-red.png",  // Update with your icon URL  
               iconAnchor: [12, 41],  
               popupAnchor: [1, -34],  
               shadowSize: [41, 41]  
@@ -150,15 +150,13 @@ $(document).ready(function(){
                   }).addTo(map);
 
   observations2004Layer = L.geoJson(observations2004_geojson,
-                   { style: lineSymbology,
-		    var customIcon = L.icon({
-              iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png",  // Update with your icon URL  
+	       { onEachFeature: function(feature, layer) {
+			var customIcon = L.icon({
+              iconUrl: "marker-icon-green.png",  // Update with your icon URL  
               iconAnchor: [12, 41],  
               popupAnchor: [1, -34],  
               shadowSize: [41, 41]  
-              });  
-              layer.setIcon(customIcon);
-                     onEachFeature: function(feature, layer) {
+              });
                   layer.bindPopup("<b>Scientific_Name: " + 
                   feature.properties.SCIENTIFIC_NAME + "</b><br>" +
                   "Section Length: " + feature.properties.SECT_LENGTH);
