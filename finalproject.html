@@ -76,7 +76,7 @@
             padding: 20px;
             margin: 20px;
         }
-      #map { height: auto; width: 80%; display: block; margin-left: auto; margin-right: auto; }
+      #map { height: 200px; width: 80%; display: block; margin-left: auto; margin-right: auto; }
       html, body {height: 100%; margin: 0; padding: 0; }
       #buttons { padding: 10px; background: #f3d1c9; }
     </style>
@@ -185,7 +185,16 @@ $("#toggleobservations2021").click( function() {
   })	
 })
 </script>
-    
+	
+    <div id="map">
+    </div>
+        <div id="buttons">
+      <button id="toggleobservations2004">Toggle the 2004 Emergence Layer.</button>
+    </div>
+    <div id="buttons">
+      <button id="toggleobservations2021">Toggle the 2021 Emergence Layer.</button>
+    </div>
+	    
     <div class="light-purple-background">
         <div class="silver-box">
             <p class="paragraph-spacing"><strong><u> About This Map </u></strong></p>
@@ -197,15 +206,6 @@ $("#toggleobservations2021").click( function() {
 
             <p> This map shows clear geographic patterns of Brood X in the United States, a cicada cohort which is most common in the mid-Atlantic region, as well as parts of the mid-West and the South.  </p>
         </div>
-    </div>
-    <div id="map">
-    </div>
-    <div id="buttons">
-      <button id="toggleobservations2004">Toggle the 2004 Emergence Layer.</button>
-    </div>
-
-    <div id="buttons">
-      <button id="toggleobservations2021">Toggle the 2021 Emergence Layer.</button>
     </div>
     <script>
         /* Your map-related script here */
